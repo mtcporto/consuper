@@ -1,0 +1,17 @@
+.about {
+    @extend %of-hidden;
+
+    &__thumb {
+        @extend %text-center;
+    }
+
+    &__content {
+        .default-btn {
+            @extend %mt-20;
+        }
+
+        &-feature {
+            @extend %mt-25;
+        }
+    }
+}

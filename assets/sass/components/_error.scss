@@ -1,0 +1,60 @@
+.error {
+    @extend %of-hidden;
+
+    @include breakpoint(lg) {
+        height: 100vh;
+    }
+
+
+    &__inner {
+        @extend %flex,
+        %justify-center;
+
+        @include breakpoint(lg) {
+            flex-direction: row-reverse;
+            height: 100%;
+        }
+    }
+
+    &__thumb {
+        @extend %h-100;
+
+        a {
+            display: block;
+            height: inherit;
+        }
+
+        @include breakpoint(lg) {
+            width: 35%;
+            height: 100%
+        }
+
+        img {
+            @extend %h-100;
+            object-fit: cover;
+
+            @include breakpoint(lg) {
+                clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+            }
+        }
+    }
+
+    &__content {
+        @extend %text-center;
+        display: grid;
+        place-content: center;
+        padding-inline: 30px;
+        padding-block: 50px;
+
+        @include breakpoint(md) {
+            padding-block: 80px;
+        }
+
+
+
+        @include breakpoint(lg) {
+            width: 65%;
+        }
+
+    }
+}

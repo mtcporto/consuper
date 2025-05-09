@@ -1,0 +1,131 @@
+.coming-soon {
+    @extend %of-hidden;
+
+    @include breakpoint(lg) {
+        height: 100vh;
+    }
+
+    &--style-2 {
+        height: 100vh;
+
+        .input-group {
+            .form-control {
+                background-color: rgba($white-color, $alpha: .50);
+                color: $white-color;
+
+                &::placeholder {
+                    color: rgba($white-color, $alpha: .70);
+                }
+            }
+
+            &-text {
+                background-color: $white-color !important;
+                color: $title-color !important;
+            }
+        }
+    }
+
+    &__inner {
+        @extend %flex,
+        %justify-center;
+
+        @include breakpoint(lg) {
+            flex-direction: row-reverse;
+            height: 100%;
+        }
+    }
+
+    &__thumb {
+        @extend %h-100;
+
+        a {
+            display: block;
+            height: inherit;
+        }
+
+        @include breakpoint(lg) {
+            width: 35%;
+            height: 100%
+        }
+
+        img {
+            @extend %h-100;
+            object-fit: cover;
+
+            @include breakpoint(lg) {
+                clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+            }
+        }
+    }
+
+    &__content {
+        @extend %text-center;
+        display: grid;
+        place-content: center;
+        padding-inline: 30px;
+        padding-block: 50px;
+
+        @include breakpoint(md) {
+            padding-block: 80px;
+        }
+
+        h2 {
+            @extend %mb-20;
+        }
+
+        >p {
+            @extend %mb-40;
+            @include font-size(20px);
+
+
+        }
+
+        @include breakpoint(lg) {
+            width: 65%;
+        }
+
+        .countdown {
+            @extend %mb-30;
+
+            &__item {
+                background-color: $white-color;
+                padding: 1rem 1.5rem;
+                box-shadow: $shadow-sm;
+            }
+
+            @include breakpoint(lg) {
+                margin-inline: auto;
+                margin-bottom: 40px;
+            }
+        }
+
+        .input-group {
+            @include breakpoint(lg) {
+                max-inline-size: 70%;
+                margin-inline: auto;
+            }
+
+            .form-control {
+                padding: 1rem;
+                border: 1px solid rgba($theme-color, $alpha: .1);
+
+                &:focus {
+                    box-shadow: none;
+                    border-color: $theme-color;
+                }
+            }
+
+            &-text {
+                background: $theme-color;
+                color: $white-color;
+                padding: 1rem 1.75rem;
+                border: none;
+
+
+                svg {
+                    @include font-size(20px);
+                }
+            }
+        }
+    }
+}

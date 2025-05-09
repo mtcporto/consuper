@@ -1,0 +1,32 @@
+.cta {
+    &__wrapper {
+        @extend %p-30;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 1rem;
+        box-shadow: $shadow-sm;
+
+        @include breakpoint(lg) {
+            padding: 50px;
+        }
+    }
+
+    &__content {
+        @extend %text-center;
+
+        h2 {
+            @extend %mb-25;
+            max-inline-size: 20ch;
+            margin-inline: auto;
+
+            @include breakpoint(lg) {
+                margin-bottom: 35px;
+            }
+        }
+
+        p {
+            @extend %mb-0;
+            color: $title-color;
+        }
+    }
+}

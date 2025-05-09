@@ -1,0 +1,110 @@
+.banner {
+  @extend %of-hidden;
+  @extend %p-rel;
+  @include background-cover;
+  padding-block: 160px;
+
+  &--overlay {
+    @extend %p-rel;
+
+    &:after {
+      @extend %p-abs,
+      %w-100,
+      %h-100;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(135deg, $secondary-color 58%, $theme-color);
+      opacity: .85;
+    }
+  }
+
+
+  @include breakpoint(md) {
+    padding-block-start: 230px;
+    padding-block-end: 200px;
+  }
+
+  @include breakpoint(lg) {
+    padding-block: 180px;
+  }
+
+  @include breakpoint(xxl) {
+    padding-block: 225px;
+  }
+
+  &--2 {
+    padding-block-start: 160px;
+    padding-block-end: 90px;
+
+    @include breakpoint(md) {
+      padding-block-start: 200px;
+      padding-block-end: 90px;
+    }
+
+    @include breakpoint(lg) {
+      padding-block: 100px;
+    }
+  }
+
+
+  &__content {
+    @extend %p-rel,
+    %mb-50;
+    z-index: 1;
+
+
+    @include breakpoint(lg) {
+      // max-inline-size: 65ch;
+      margin-bottom: 0;
+    }
+
+    h1 {
+      @extend %mb-20;
+      text-transform: uppercase;
+
+      @include breakpoint(lg) {
+        @include breakpoint(max-xxl) {
+          @include font-size(65px);
+        }
+      }
+
+
+
+
+    }
+
+    h1,
+    p {
+      color: $white-color;
+    }
+
+    >p {
+      @extend %mb-45;
+      @include font-size(18px);
+      font-family: $title-font;
+      line-height: 1.65;
+      max-inline-size: 42ch;
+    }
+
+    .countdown {
+      &__item {
+        @extend %p-20;
+        border: 1px solid rgba($white-color, $alpha: .50);
+        background-color: rgba($white-color, $alpha: .35);
+        @include add-prefix(backdrop-filter, blur(10px));
+      }
+
+      &__text {
+        color: $title-color;
+      }
+    }
+  }
+
+  .default-btn {
+    @extend %mt-40;
+  }
+
+  &__bottom {
+    @extend %mt-30;
+  }
+}

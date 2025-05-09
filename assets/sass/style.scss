@@ -1,0 +1,77 @@
+/*!
+Template Name: Uevent
+Template URI: https: //themeforest.net/user/thetork
+Author: thetork
+Author URI: https: //themeforest.net/user/thetork
+Description: Description
+Version: 1.0.0
+Text Domain: Uevent
+Tags:event, meetup, conference landing page, event offer, event landing page, event management landing page
+
+*/
+
+
+
+
+
+
+
+
+
+/*=====================================================================*/
+
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@import 'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+
+// 2. Vendors
+@import 'vendors/normalize',
+'vendors/rfs';
+
+// 3. Base stuff
+@import 'base/fonts',
+'base/typography',
+'base/animations',
+'base/common',
+'base/helpers';
+
+@import "abstracts/extend";
+
+// 4. Layout-related sections
+@import 'layout/header',
+'layout/banner',
+'layout/contact',
+'layout/event',
+'layout/footer';
+
+
+// 5. Components
+@import 'components/button',
+'components/preloader',
+'components/about',
+'components/blog',
+'components/widget',
+'components/error',
+'components/countdown',
+'components/coming-soon',
+'components/account',
+'components/team',
+'components/pricing',
+'components/sponsor',
+'components/venue',
+'components/faq',
+'components/cta',
+'components/rating',
+'components/social',
+'components/artist',
+'components/feature',
+'components/register';
+
+// 6. Page-specific styles
+@import 'pages/home';
+
+// 7. Themes
+@import 'themes/default';

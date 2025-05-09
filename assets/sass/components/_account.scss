@@ -1,0 +1,118 @@
+/*Account Section Starts Here*/
+
+.account {
+    @extend %of-hidden;
+
+    &__wrapper {
+        @extend %text-center;
+        border-radius: 10px;
+        box-shadow: $shadow-sm;
+        padding: 50px 40px;
+        margin: 0 auto;
+        background-color: $white-color;
+
+        .title {
+            text-transform: capitalize;
+            @extend %mb-30;
+        }
+
+        .cate {
+            font-style: normal;
+
+            a {
+                font-weight: 600;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+
+    &__form {
+        .form-group {
+            @extend %mb-25;
+
+            input {
+                @extend %w-100;
+                border: 1px solid rgba($color:$theme-color, $alpha:.3);
+                outline: none;
+                border-radius: .35rem;
+                background: $body-color;
+                box-shadow: 0px 2px 2px 0px rgba($theme-color, $alpha: .10);
+                padding: .6rem 1rem;
+            }
+
+            .checkgroup {
+                @extend %flex;
+                @extend %align-items-center;
+                flex-wrap: nowrap;
+                @extend %c-pointer;
+
+                input {
+                    &[type="checkbox"] {
+                        width: 18px;
+                        height: 18px;
+                        @extend %mr-15;
+
+                        @include breakpoint(max-sm) {
+                            width: 14px;
+                            height: 14px;
+                            margin-right: 8px;
+                        }
+
+                        @extend %c-pointer;
+                    }
+                }
+
+                label {
+                    @extend %m-0;
+                    color: $title-color;
+                    @extend %c-pointer;
+
+                    @include breakpoint(max-sm) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            a {
+                color: $title-color;
+                text-decoration: underline;
+
+                @include breakpoint(max-sm) {
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    color: $theme-color
+                }
+            }
+
+            button {
+                @extend %w-100;
+                box-shadow: none;
+                border: none;
+                background-color: $theme-color;
+
+                @include breakpoint(max-sm) {
+                    margin-top: 24px;
+                }
+            }
+        }
+
+        .form-floating {
+            input {
+                background: $body-color;
+                border: 1px solid rgba($theme-color, $alpha: .10);
+                color: $black-color;
+
+                &:focus {
+                    border-color: rgba($color:$theme-color, $alpha:.3);
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

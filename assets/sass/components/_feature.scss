@@ -1,0 +1,46 @@
+.feature {
+    &__item {
+        &-inner {
+            @extend %p-10,
+        }
+
+        &-thumb {
+            @extend %mb-20;
+            @include box(60px);
+            @include add-prefix(transition, $transition);
+            display: grid;
+            place-items: center;
+            border: 1px solid $theme-color;
+            border-radius: 1rem;
+            margin-inline: auto;
+
+            .icon {
+                @include font-size(25px);
+                @include add-prefix(transition, $transition);
+                color: $theme-color;
+            }
+        }
+
+        &-content {
+            h4 {
+                @extend %mb-15;
+            }
+
+            p {
+                @extend %mb-0;
+            }
+        }
+
+        &:hover {
+            .feature__item {
+                &-thumb {
+                    background-color: $theme-color;
+
+                    .icon {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}

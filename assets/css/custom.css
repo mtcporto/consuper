@@ -1,0 +1,111 @@
+/* Custom optimized CSS styles */
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px 0;
+    z-index: 9999;
+    display: none;
+}
+
+.cookie-consent a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.policy-content h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.policy-content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.policy-content p {
+    margin-bottom: 15px;
+}
+
+.success-content .success-icon {
+    color: #28a745;
+}
+
+.success-content .event-details {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.success-content .qr-code-area {
+    margin: 30px 0;
+}
+
+.success-content .action-buttons .default-btn {
+    margin: 0 10px;
+}
+
+/* Print styles */
+@media print {
+    header, footer, .cookie-consent, .preloader, .menu-area {
+        display: none !important;
+    }
+    
+    .success-content {
+        page-break-inside: avoid;
+    }
+}
+
+/* Optimize page loading */
+.preloader {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.preloader.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Form feedback styles */
+.form-feedback {
+    display: none;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.form-feedback.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.form-feedback.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+    .banner__content h4, .banner__content h5 {
+        font-size: 1rem;
+    }
+    
+    .countdown__item {
+        margin: 0 5px;
+    }
+    
+    .countdown__number {
+        font-size: 24px;
+    }
+    
+    .countdown__text {
+        font-size: 12px;
+    }
+}

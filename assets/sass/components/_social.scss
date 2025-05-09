@@ -1,0 +1,31 @@
+.social {
+    @extend %flex;
+    @extend %align-items-center;
+    @extend %list-none;
+    @extend %pl-0;
+    @extend %mb-0;
+    gap: 15px;
+
+    &__link {
+        @include box(40px);
+        @include add-prefix(transition, background-color .2s linear);
+        display: inline-grid;
+        place-items: center;
+        border-radius: 5px;
+        background-color: $secondary-color;
+
+        svg {
+            @include add-prefix(transition, $transition);
+            @include font-size(16px);
+            color: $title-color;
+        }
+
+        @include hover {
+            background-color: $theme-color;
+
+            svg {
+                color: $white-color;
+            }
+        }
+    }
+}

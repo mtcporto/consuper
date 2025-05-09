@@ -1,0 +1,35 @@
+RewriteOptions inherit
+# Redirecionamento de páginas PHP para HTML
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirecionar index.php para index.html
+  RewriteRule ^index\.php$ index.html [L,R=301]
+
+  # Redirecionar páginas específicas
+  RewriteRule ^internas/inscricao\.php$ inscricao.html [L,R=301]
+  RewriteRule ^internas/privacidade\.php$ privacidade.html [L,R=301]
+  RewriteRule ^internas/sucesso\.php$ sucesso.html [L,R=301]
+  
+  # Redirecionar tentativas de acesso à pasta internas
+  RewriteRule ^internas/(.*)$ / [L,R=301]
+  
+  # Redirecionar tentativas de acesso à pasta painel
+  RewriteRule ^painel/(.*)$ / [L,R=301]
+
+  # Manipular URLs limpas
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+  
+  # Impedir o acesso a pastas de sistema
+  RewriteRule ^(includes|painel|libs)/(.*)$ - [F,L]
+</IfModule>
+
+# Prevenir listagem de diretório
+Options -Indexes
+
+# Definir página de erro padrão
+ErrorDocument 404 /index.html

@@ -1,0 +1,48 @@
+.venue {
+    @extend %p-rel;
+
+    &__content {
+        @extend %p-25,
+        %p-rel;
+        background-color: $white-color;
+        border-radius: .5rem;
+        z-index: 1;
+        box-shadow: 10px 10px 20px 5px rgba($black-color, $alpha: .2);
+
+        >p {
+            max-inline-size: 60ch;
+        }
+    }
+
+    &__list {
+        @extend %mt-30;
+
+        &-item {
+            &:not(:last-child) {
+                @extend %mb-20;
+            }
+
+            span {
+                @extend %mr-5;
+
+                svg {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+
+    &__map {
+        @extend %p-abs,
+        %h-100,
+        %w-100;
+        left: 0;
+        top: 0;
+
+        iframe {
+            @extend %w-100,
+            %h-100;
+            border: 0;
+        }
+    }
+}

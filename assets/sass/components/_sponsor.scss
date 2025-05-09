@@ -1,0 +1,22 @@
+.sponsor {
+    &__item {
+        display: grid;
+        place-items: center;
+        padding: .75rem 1rem;
+        background-color: $body-color;
+        border-radius: .5rem;
+    }
+
+    &__slider2 {
+        max-inline-size: 50%;
+        margin-inline: auto;
+
+        @include breakpoint(sm) {
+            max-inline-size: 70%;
+        }
+
+        @include breakpoint(md) {
+            max-inline-size: 80%;
+        }
+    }
+}

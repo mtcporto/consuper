@@ -1,0 +1,17 @@
+.register {
+    &--uplifted {
+        @extend %p-rel;
+        z-index: 1;
+        margin-top: -70px;
+    }
+
+    &__wrapper {
+        background-color: $theme-color;
+        padding: 40px;
+        border-radius: .5rem;
+
+        @include breakpoint(lg) {
+            padding: 50px;
+        }
+    }
+}

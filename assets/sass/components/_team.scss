@@ -1,0 +1,140 @@
+.team {
+    @extend %of-hidden;
+    @include background-cover;
+
+    &__item {
+        @extend %p-rel;
+        background-color: $white-color;
+        border-radius: .5rem;
+        box-shadow: $shadow-sm;
+
+        &-inner {
+            @extend %p-20;
+
+            @include breakpoint(sm) {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+        }
+
+        &-thumb {
+            @extend %of-hidden,
+            %mb-30;
+            border-radius: .4rem;
+
+            @include breakpoint(sm) {
+                width: 45%;
+                margin-bottom: 0;
+            }
+
+            img {
+                @extend %w-100,
+                %h-100;
+                @include add-prefix(transition, $transition);
+                object-fit: cover;
+
+            }
+        }
+
+        &-content {
+            @include breakpoint(sm) {
+                padding-inline-start: 25px;
+                padding-inline-end: 10px;
+                width: 55%;
+            }
+
+            @include breakpoint(xxl) {
+                padding-inline-start: 30px;
+            }
+        }
+
+        .social {
+
+            &__link {
+                @include box(35px);
+                @include font-size(14px);
+            }
+        }
+
+        &:hover {
+            .team__item {
+                &-thumb {
+                    img {
+                        @include add-prefix(transform, scale(1.1));
+                    }
+                }
+
+                &-content {
+                    h4 {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+
+        //style 2
+
+        &--style2 {
+            background-color: rgba($white-color, $alpha: .10);
+
+            .svg-shape,
+            &:after {
+                display: none;
+            }
+
+
+            .team__item {
+                &-inner {
+                    @extend %text-center,
+                    %p-10;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                &-thumb {
+                    @extend %w-100;
+                }
+
+                &-content {
+                    @extend %p-0,
+                    %w-100;
+                }
+            }
+        }
+
+    }
+
+    &__single {
+        &-thumb {
+            @extend %of-hidden;
+            border-radius: .5rem;
+
+            img {
+                @extend %w-100;
+                object-fit: cover;
+            }
+        }
+
+        &-name {
+            @extend %mb-25;
+
+            p {
+                @extend %mb-0;
+                font-weight: 500;
+            }
+        }
+
+        &-text {
+            p {
+                line-height: 1.5;
+                max-inline-size: 60ch;
+            }
+        }
+
+        .social {
+            @extend %mt-35;
+        }
+
+    }
+}

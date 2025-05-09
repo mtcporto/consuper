@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+div#alertaMsg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+div#alertaMsg div{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: -1;
+}
+
+div#alertaMsg p{
+    width: 400px;
+    background-color:#fff;
+    color: #333;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    margin-left: -170px;
+    margin-top: -200px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    padding: 20px 15px;
+	border-radius: 10px;
+}
+
+div#alertaMsg p img{
+    margin-bottom: 10px;
+    width: 35px;
+}
+
+div#alertaMsg p a{
+    border: 1px solid #e8e8e8;
+    padding: 3px 15px;
+    font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}

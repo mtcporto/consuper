@@ -1,0 +1,19 @@
+.countdown {
+    @extend %flex;
+    gap: 10px;
+
+    @include breakpoint(md) {
+        gap: 30px;
+    }
+
+    &__item {
+        @extend %text-center;
+        min-width: calc(50px + 2vw);
+        border-radius: .5rem;
+    }
+
+    &__text {
+        @extend %mb-0;
+        color: $text-color;
+    }
+}
